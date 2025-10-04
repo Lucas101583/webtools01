@@ -7,10 +7,79 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+    <h1>Bem vindo à Galeria de Poemas!</h1>
+    <h2>Um espaço para reunir e partilhar poemas que marcaram o desenvolvedor desta página</h2>
+    </header>
+
     <main>
-    <p>Bem vindo! Isto é um texto placeholder</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus iste repudiandae inventore iusto qui quam architecto, 
-    ab porro placeat possimus pariatur sit deserunt culpa quaerat voluptates molestias fugiat eos dolor.</p>
+    <div class="gallery">
+
+    <a href="poemas/TMOTN/tmotn.html" class="thumbnail">
+      <img src="imagens/queen-of-the-night-scene-mozarts-magic-flute-simon-quaglio.png" alt="Poema 1: The Music Of The Night.">
+      <div class="overlay">
+        <h3>"The Music Of The Night"</h3>
+        <p>por Graham Craven</p>
+    </div>
+    </a>
+        
+    <a href="poemas/RubberDucky/RD.html" class="thumbnail">
+      <img src="imagens/istockphoto-183428147-612x612.png" alt="Poema 2: Rubber Ducky">
+      <div class="overlay">
+        <h3>"Rubber Ducky"</h3>
+        <p>por Edwina Reizer</p>   
+    </div>
+    </a>
+
+     <a href="poemas/QVaP/QVAP.html" class="thumbnail">
+      <img src="imagens/6c852b48f949a0ba6c45746c4d7b5862.png" alt="Poema 2: Rubber Ducky">
+      <div class="overlay">
+        <h3>"Quando vier a Primavera"</h3>
+        <p>por Alberto Caeiro</p>   
+    </div>
+    </a>
     </main>
+
+    <footer>
+    <button id="toggleContact">Contact the Developer</button>
+
+  <section class="contact hidden">
+    <h2>Contact the Developer</h2>
+    <form id="contactForm" novalidate>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+    <button id="toggleLogin">Área Reservada</button>
+    <section class="login-section hidden">
+     <form method="post" action="login.php">
+      <h2>Login</h2>
+      <input type="text" name="username" placeholder="Usuário" required>
+      <input type="password" name="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+     </form>
+  </section>
+</footer>
+
+<!--Ainda não domino JavaScript,tive ajuda para fazer esta parte do código :b-->
+<script>
+const toggleBtn = document.getElementById("toggleContact");
+const contactSection = document.querySelector(".contact");
+
+toggleBtn.addEventListener("click", () => {
+  contactSection.classList.toggle("hidden");
+});
+</script>
+
+
 </body>
 </html>
