@@ -1,60 +1,104 @@
 @charset "UTF-8";
 
 body {
+
   font-family: 'Georgia', serif;
   background-color: #f4f1ec;
   margin: 0;
   padding: 40px;
+  line-height: 1.6;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
-.gallery {
+main {
+  width: 90%;
+  max-width: 1200px;
+  padding: 40px 0;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  width: 90%;
-  max-width: 1000px;
+  gap: 20px;
+  justify-items: center;
 }
+
+
 
 .thumbnail {
   position: relative;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
 }
 
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+
 .thumbnail:hover {
   transform: scale(1.03);
 }
 
 .thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 500px;     
+  height: 300px;
 }
 
 .overlay {
   position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
   color: white;
   width: 100%;
-  height: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  transition: height 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .thumbnail:hover .overlay {
-  height: 100%;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .overlay h3 {
@@ -67,6 +111,7 @@ body {
   font-size: 1em;
   opacity: 0.9;
 }
+
 
 .contacto {
     margin-top: 40px;
@@ -109,4 +154,41 @@ footer button:hover {
 
 .contact.hidden {
   display: none;
+}
+
+.login {
+  margin-top: 20px;
+  padding: 30px;
+  background-color: #fcf0de;
+  border-radius: 10px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.login.hidden {
+  display: none;
+}
+
+.contact form label,
+.login form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact form input,
+.contact form textarea,
+.login form input,
+.login form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-size: 1em;
+  font-family: inherit;
 }

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Galeria de poemas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico">
 </head>
 <body>
     <header>
@@ -13,48 +14,76 @@
     </header>
 
     <main>
-    <p>Bem vindo! Isto é um texto placeholder</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus iste repudiandae inventore iusto qui quam architecto, 
-    ab porro placeat possimus pariatur sit deserunt culpa quaerat voluptates molestias fugiat eos dolor.</p>
+    <section id="gallery">
+        <div class="thumbnail">
+            <a href="poemas/TMOTN/tmotn.html">
+              <img src="imagens/queen-of-the-night-scene-mozarts-magic-flute-simon-quaglio.png" alt="Poema 1">
+              <div class="overlay">The Music of The Night por Graham Craven</div>
+            </a>
+        </div>
+        <div class="thumbnail">
+            <a href="poemas/RubberDucky/RD.html">
+              <img src="imagens/istockphoto-183428147-612x612.png" alt="Poema 2">
+              <div class="overlay">Rubber Ducky por Edwina Reizer</div>
+            </a>
+        </div>
+        <div class="thumbnail">
+            <a href="poemas/QVaP/QVAP.html">
+              <img src="imagens/6c852b48f949a0ba6c45746c4d7b5862.png" alt="Poema 3">
+              <div class="overlay">Quando Vier a Primavera de Alberto Caeiro</div>
+            </a>
+        </div>
+    </section>
     </main>
 
     <footer>
-    <button id="toggleContact">Contact the Developer</button>
-
+    <button id="toggleContact">Contactar o desenvolvedor</button>
   <section class="contact hidden">
-    <h2>Contact the Developer</h2>
+    <h2>Contactar o desenvolvedor</h2>
     <form id="contactForm" novalidate>
-      <label for="name">Name:</label>
+      <label for="name">Nome:</label>
       <input type="text" id="name" name="name" required>
 
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
 
-      <label for="message">Message:</label>
+      <label for="message">Mensagem:</label>
       <textarea id="message" name="message" rows="4" required></textarea>
 
-      <button type="submit">Send</button>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
-    <button id="toggleLogin">Área Reservada</button>
-    <section class="login-section hidden">
-     <form method="post" action="login.php">
-      <h2>Login</h2>
-      <input type="text" name="username" placeholder="Usuário" required>
-      <input type="password" name="password" placeholder="Senha" required>
-      <button type="submit">Entrar</button>
-     </form>
-  </section>
+<button id="toggleLogin">Login</button>
+<section class="login hidden">
+  <h2>Login</h2>
+  <form id="loginForm" novalidate>
+    <label for="login-username">Nome de usuário:</label>
+    <input type="text" id="login-username" name="username" required>
+
+    <label for="login-password">Password:</label>
+    <input type="password" id="login-password" name="password" required>
+
+    <button type="submit">Entrar</button>
+  </form>
+</section>
 </footer>
 
 <!--Ainda não domino JavaScript,tive ajuda para fazer esta parte do código :b-->
 <script>
-const toggleBtn = document.getElementById("toggleContact");
+const toggleContactBtn = document.getElementById("toggleContact");
 const contactSection = document.querySelector(".contact");
 
-toggleBtn.addEventListener("click", () => {
+toggleContactBtn.addEventListener("click", () => {
   contactSection.classList.toggle("hidden");
+});
+
+// Login toggle
+const toggleLoginBtn = document.getElementById("toggleLogin");
+const loginSection = document.querySelector(".login");
+
+toggleLoginBtn.addEventListener("click", () => {
+  loginSection.classList.toggle("hidden");
 });
 </script>
 
